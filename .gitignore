@@ -1,0 +1,5 @@
+!.gitkeep
+./containers/bch/data
+./containers/mongodb/data
+./containers/bitdb/data
+./containers/grafana/data
