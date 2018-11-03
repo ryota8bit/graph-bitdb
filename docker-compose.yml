@@ -49,9 +49,10 @@ services:
       - 'ME_CONFIG_BASICAUTH_USERNAME=user'
       - 'ME_CONFIG_BASICAUTH_PASSWORD=password!'
 
+  # Grafana : http://localhost:3000/
   grafana:
     image: grafana/grafana:latest
     ports:
-      - 3000:3000
+      - '3000:3000'
     volumes:
       - './containers/grafana/data:/var/lib/grafana'
