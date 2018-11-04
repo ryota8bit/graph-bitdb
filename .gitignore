@@ -1,5 +1,6 @@
 !.gitkeep
-./containers/bch/data
-./containers/mongodb/data
-./containers/bitdb/data
-./containers/grafana/data
+!bitcoin.conf
+containers/bch/data/testnet3/
+containers/mongodb/data/*
+containers/bitdb/data/*
+containers/grafana/data/*

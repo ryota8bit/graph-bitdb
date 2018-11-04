@@ -9,6 +9,7 @@ services:
       - "5555:30303"
     links:
       - 'bch'
+      - 'mongodb'
     stdin_open: true
     tty: true
 
@@ -18,7 +19,7 @@ services:
       dockerfile: ./containers/bch/Dockerfile
     command: /usr/bin/bitcoind --printtoconsole
     volumes:
-      - './containers/bch/data:/root/.bch'
+      - './containers/bch/data:/root/.bitcoin'
     ports:
       - "5556:18332"
       - "28332:28332"
@@ -52,6 +53,11 @@ services:
   # Grafana : http://localhost:3000/
   grafana:
     image: grafana/grafana:latest
+    # build:
+    #   context: .
+    #   dockerfile: ./containers/grafana/Dockerfile
+    environment:
+      - GF_INSTALL_PLUGINS=crate-datasource,grafana-clock-panel,grafana-worldmap-panel
     ports:
       - '3000:3000'
     volumes:
